@@ -51,6 +51,7 @@ const addBookHandler = async (request, h) => {
         status: 'success',
         message: 'Buku berhasil ditambahkan',
         data: {
+          bookId: result.ops[0].id,
           book: result.ops[0],
         },
       })

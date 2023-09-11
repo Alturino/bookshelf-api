@@ -1,0 +1,34 @@
+services:
+  app:
+    build: ./
+    volumes:
+      - ./data/server:/home/app/data/server
+    ports:
+      - 9000:9000
+    command: sh -c 'npm start'
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    restart: on-failure
+  mongo:
+    image: mongo
+    restart: on-failure
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    volumes:
+      - ./data/db:/home/app/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=example
+      - ME_CONFIG_MONGODB_URL=mongodb://root:example@mongo:27017/?authSource=admin
+    depends_on:
+      - mongo
+    links:
+      - mongo
