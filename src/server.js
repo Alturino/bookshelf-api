@@ -1,7 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 const dotenv = require('dotenv');
-const mongoDb = require('hapi-mongodb');
+// const mongoDb = require('hapi-mongodb');
 
 const init = async () => {
   dotenv.config();
@@ -17,16 +17,16 @@ const init = async () => {
     },
   });
 
-  await server.register({
-    plugin: mongoDb,
-    options: {
-      url: process.env.MONGODB_URL,
-      settings: {
-        useUnifiedTopology: true,
-      },
-      decorate: true,
-    },
-  });
+  // await server.register({
+  //   plugin: mongoDb,
+  //   options: {
+  //     url: process.env.MONGODB_URL,
+  //     settings: {
+  //       useUnifiedTopology: true,
+  //     },
+  //     decorate: true,
+  //   },
+  // });
 
   server.route(routes);
 
