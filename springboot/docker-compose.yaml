@@ -1,0 +1,32 @@
+services:
+  bookshelf-api:
+    build:
+      'Dockerfile'
+  #  elasticsearch:
+  #    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.17.10'
+  #    environment:
+  #      - 'ELASTIC_PASSWORD=secret'
+  #      - 'discovery.type=single-node'
+  #      - 'xpack.security.enabled=false'
+  #    ports:
+  #      - '9200'
+  #      - '9300'
+  postgres:
+    image: 'postgres:16.1-alpine3.19'
+    environment:
+      - 'POSTGRES_DB=bookshelf'
+      - 'POSTGRES_PASSWORD=bookshelf_application'
+      - 'POSTGRES_USER=bookshelf_application'
+    ports:
+      - '5432'
+  #  rabbitmq:
+  #    image: 'rabbitmq:3.12.12-alpine'
+  #    environment:
+  #      - 'RABBITMQ_DEFAULT_PASS=secret'
+  #      - 'RABBITMQ_DEFAULT_USER=myuser'
+  #    ports:
+  #      - '5672'
+  redis:
+    image: 'redis:7.2.4-alpine3.19'
+    ports:
+      - '6379'
