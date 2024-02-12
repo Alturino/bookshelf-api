@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_DB_URL")
+}
+
+model Book {
+  author       String
+  current_page Int      @default(0)
+  finished     Boolean  @default(false)
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String   @unique
+  publisher    String
+  reading      Boolean  @default(false)
+  summary      String
+  total_page   Int      @default(0)
+  year         DateTime
+  inserted_at  DateTime @default(now()) @db.Timestamp
+  updated_at   DateTime @default(now()) @db.Timestamp
+}

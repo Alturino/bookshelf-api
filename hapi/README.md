@@ -1,4 +1,4 @@
-# Bookshelf-API
+# Book-Shelf-API
 
 Submission Dicoding Belajar Backend Pemula
 
@@ -29,27 +29,27 @@ Request:
 - Body :
 
 ```json
-{
-  "name": "String",
-  "year": "String",
-  "author": "String",
-  "summary": "String",
-  "publisher": "String",
-  "pageCount": "Integer",
-  "readPage": "Integer",
-  "reading": "Boolean"
-}
+    {
+        "name": "String",
+        "year": "String",
+        "author": "String",
+        "summary": "String",
+        "publisher": "String",
+        "pageCount": "Integer",
+        "readPage": "Integer",
+        "reading": "Boolean"
+    }
 ```
 
 Response:
 
 ```json
 {
-  "status": "String",
-  "message": "String",
-  "data": {
-    "bookId": "String"
-  }
+    "status": "String",
+    "message": "String",
+    "data": {
+        "bookId": "String"
+    }
 }
 ```
 
@@ -92,23 +92,23 @@ Response:
 
 ```json
 {
-  "status": "String",
-  "data": {
-    "book": {
-      "id": "String",
-      "name": "String",
-      "year": "Year",
-      "author": "String",
-      "summary": "String",
-      "publisher": "String",
-      "pageCount": "Integer",
-      "readPage": "Integer",
-      "finished": "Boolean",
-      "reading": "Boolean",
-      "insertedAt": "Date",
-      "updatedAt": "Date"
+    "status": "String",
+    "data": {
+        "book": {
+            "id": "String",
+            "name": "String",
+            "year": "Year",
+            "author": "String",
+            "summary": "String",
+            "publisher": "String",
+            "pageCount": "Integer",
+            "readPage": "Integer",
+            "finished": "Boolean",
+            "reading": "Boolean",
+            "insertedAt": "Date",
+            "updatedAt": "Date"
+        }
     }
-  }
 }
 ```
 
@@ -125,14 +125,14 @@ Request:
 
 ```json
 {
-  "name": "String",
-  "year": "Integer",
-  "author": "String",
-  "summary": "String",
-  "publisher": "String",
-  "pageCount": "Integer",
-  "readPage": "Integer",
-  "reading": "Boolean"
+    "name": "String",
+    "year": "Integer",
+    "author": "String",
+    "summary": "String",
+    "publisher": "String",
+    "pageCount": "Integer",
+    "readPage": "Integer",
+    "reading": "Boolean"
 }
 ```
 

@@ -1,15 +1,14 @@
 services:
   app:
     build: ./
-    volumes:
-      - ./data/server:/home/app/data/server
-    ports:
-      - 9000:9000
-    command: sh -c 'npm start'
+    env_file:
+      - ./.env
     depends_on:
       - mongo
     links:
       - mongo
+    ports:
+      - 9000:9000
     restart: on-failure
   mongo:
     image: mongo
@@ -17,8 +16,10 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=example
+    ports:
+      - 27017:27017
     volumes:
-      - ./data/db:/home/app/data/db
+      - ./data/db:/data/db
   mongo-express:
     image: mongo-express
     restart: always

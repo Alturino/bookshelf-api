@@ -1,0 +1,52 @@
+services:
+  bookshelf-api-nestjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bookshelf-api-nestjs
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./
+          target: ./
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./package.json
+    depends_on:
+      - mongo
+    env_file:
+      - ./.env
+    links:
+      - mongo
+    ports:
+      - ${NESTJS_SERVER_PORT}:${NESTJS_SERVER_PORT}
+    restart: on-failure
+  mongo:
+    container_name: mongo
+    env_file:
+      - ./.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    image: mongo:6.0.13-jammy
+    ports:
+      - ${MONGO_DB_PORT}:${MONGO_DB_PORT}
+    restart: on-failure
+    volumes:
+      - /data/db:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    env_file:
+      - ./.env
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=mongodb_admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=mongodb_admin
+      - ME_CONFIG_MONGODB_URL=mongodb://${ME_CONFIG_MONGODB_ADMINUSERNAME}:${ME_CONFIG_MONGODB_ADMINPASSWORD}@${MONGO_DB_HOST}:${MONGO_DB_PORT}/?authSource=admin
+    depends_on:
+      - mongo
+    links:
+      - mongo
