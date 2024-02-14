@@ -6,6 +6,11 @@ import com.example.learnspringboot.book.mapper.BookMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +18,7 @@ import java.util.NoSuchElementException;
 
 
 @Service
+@CacheConfig(cacheNames = "books")
 public class BookService {
 
     private static final Logger logger = LoggerFactory.getLogger(BookService.class);
@@ -20,23 +26,15 @@ public class BookService {
 
     @Autowired
     public BookService(BookRepository repository) {
-        logger.info("Constructing BookService");
-        logger.info("Initializing BookRepository");
         this.repository = repository;
-        logger.info("BookRepository Initialized");
     }
 
     public BookEntity saveBook(CreateBookDto createBookDto) {
-        logger.info("Calling function saveBook");
-        logger.info("Creating BookEntity from createBookDto: " + createBookDto.toString());
         BookEntity newBook = BookMapper.toEntity(createBookDto);
-        logger.info("BookEntity created BookEntity: " + newBook.toString());
-        logger.info("Saving BookEntity");
-        BookEntity savedBook = repository.save(newBook);
-        logger.info("BookEntity Saved");
-        return savedBook;
+        return repository.save(newBook);
     }
 
+    @CachePut(cacheNames = "books", key = "#id")
     public BookEntity updateBook(UpdateBookDto bookDto, String id) {
         BookEntity oldBook = repository.findBookEntityById(id)
             .orElseThrow(() -> new NoSuchElementException("Gagal memperbarui buku. Id tidak ditemukan"));
@@ -44,6 +42,7 @@ public class BookService {
         return repository.save(newBook);
     }
 
+    @CacheEvict(cacheNames = "books", key = "#id")
     public void deleteBook(String id) {
         boolean isExist = repository.existsById(id);
         if (!isExist) {
@@ -52,20 +51,12 @@ public class BookService {
         repository.deleteById(id);
     }
 
+    @Caching(cacheable = {@Cacheable(cacheNames = "books", unless = "#name == null or #reading == null or #finished == null")}, evict = {@CacheEvict(cacheNames = "books")})
     public List<BookEntity> getBook(String name, Integer reading, Integer finished) {
-        var books = repository.findAll();
-        if (name != null) {
-            books = books.stream().filter(book -> book.getName().contains(name)).toList();
-        }
-        if (reading != null) {
-            books = books.stream().filter(book -> (reading == 1) == book.isReading()).toList();
-        }
-        if (finished != null) {
-            books = books.stream().filter(book -> (finished == 1) == book.isFinished()).toList();
-        }
-        return books;
+        return repository.findBookEntitiesByNameAndReadingAndFinished(name, reading != null && reading == 1, finished != null && finished == 1);
     }
 
+    @Cacheable(cacheNames = "books", key = "#id")
     public BookEntity getBookById(String id) {
         return repository.findBookEntityById(id).orElseThrow(() -> new NoSuchElementException("Buku tidak ditemukan"));
     }

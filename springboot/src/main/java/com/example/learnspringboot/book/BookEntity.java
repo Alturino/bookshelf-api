@@ -13,12 +13,13 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "books")
 @Table(name = "books", indexes = {@Index(columnList = "name"), @Index(columnList = "author"), @Index(columnList = "publisher")})
-public class BookEntity {
+public class BookEntity implements Serializable {
     @Id
     @Column
     private String Id;
@@ -88,8 +89,6 @@ public class BookEntity {
         this.pageCount = pageCount;
         this.readPage = readPage;
         this.reading = reading;
-        this.insertedAt = insertedAt;
-        this.updatedAt = updatedAt;
         this.finished = finished;
     }
 

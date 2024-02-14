@@ -3,6 +3,9 @@ services:
     container_name: bookshelf-api
     build:
       'Dockerfile'
+    depends_on:
+      - postgres
+      - redis
   #  elasticsearch:
   #    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.17.10'
   #    environment:
@@ -17,8 +20,8 @@ services:
     image: 'postgres:16.1-alpine3.19'
     environment:
       - 'POSTGRES_DB=bookshelf'
-      - 'POSTGRES_PASSWORD=bookshelf_application'
-      - 'POSTGRES_USER=bookshelf_application'
+      - 'POSTGRES_PASSWORD=bookshelf-application'
+      - 'POSTGRES_USER=bookshelf-application'
     ports:
       - 5432:5432
     volumes:
@@ -34,7 +37,7 @@ services:
     container_name: bookshelf-redis
     image: 'redis:7.2.4-alpine3.19'
     ports:
-      - '6379'
+      - 6379:6379
     volumes:
       - redis:/data
 volumes:
