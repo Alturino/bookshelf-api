@@ -1,5 +1,6 @@
 services:
   bookshelf-api:
+    container_name: bookshelf-api
     build:
       'Dockerfile'
   #  elasticsearch:
@@ -12,13 +13,16 @@ services:
   #      - '9200'
   #      - '9300'
   postgres:
+    container_name: bookshelf-postgres
     image: 'postgres:16.1-alpine3.19'
     environment:
       - 'POSTGRES_DB=bookshelf'
       - 'POSTGRES_PASSWORD=bookshelf_application'
       - 'POSTGRES_USER=bookshelf_application'
     ports:
-      - '5432'
+      - 5432:5432
+    volumes:
+      - postgresql:/var/lib/postgresql/data
   #  rabbitmq:
   #    image: 'rabbitmq:3.12.12-alpine'
   #    environment:
@@ -27,6 +31,12 @@ services:
   #    ports:
   #      - '5672'
   redis:
+    container_name: bookshelf-redis
     image: 'redis:7.2.4-alpine3.19'
     ports:
       - '6379'
+    volumes:
+      - redis:/data
+volumes:
+  postgresql:
+  redis:

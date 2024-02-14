@@ -2,8 +2,6 @@ package com.example.learnspringboot.book;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
@@ -16,25 +14,24 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
-@Table(name = "book", schema = "book", indexes = {@Index(columnList = "name"), @Index(columnList = "author"), @Index(columnList = "publisher")})
+@Table(name = "books", indexes = {@Index(columnList = "name"), @Index(columnList = "author"), @Index(columnList = "publisher")})
 public class BookEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private String id;
+    @Column
+    private String Id;
 
-    @NotNull
-    @NotEmpty
-    @NotBlank
+    @NotNull(message = "Gagal menambahkan buku. Mohon isi nama buku")
+    @NotEmpty(message = "Gagal menambahkan buku. Mohon isi nama buku")
+    @NotBlank(message = "Gagal menambahkan buku. Mohon isi nama buku")
     @Column
     private String name;
 
     @NotNull
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column
-    private LocalDateTime year;
+    private int year;
 
     @NotNull
     @NotEmpty
@@ -63,20 +60,26 @@ public class BookEntity {
     @Column(name = "is_reading")
     private boolean reading;
 
-    @NotNull
     @CreationTimestamp
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @Column(name = "inserted_at", updatable = false)
+    private LocalDateTime insertedAt;
 
-    @NotNull
     @UpdateTimestamp
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 
-    public BookEntity(String name, LocalDateTime year, String author, String summary, String publisher, int pageCount, int readPage, boolean reading, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    @NotNull
+    @Column(name = "is_finished")
+    private boolean finished;
+
+    public BookEntity() {
+    }
+
+    public BookEntity(String id, String name, int year, String author, String summary, String publisher, int pageCount, int readPage, boolean reading, boolean finished) {
+        this.Id = id;
         this.name = name;
         this.year = year;
         this.author = author;
@@ -85,15 +88,25 @@ public class BookEntity {
         this.pageCount = pageCount;
         this.readPage = readPage;
         this.reading = reading;
-        this.createdAt = createdAt;
+        this.insertedAt = insertedAt;
         this.updatedAt = updatedAt;
+        this.finished = finished;
     }
 
-    public BookEntity() {
+    public BookEntity(String name, int year, String author, String summary, String publisher, int pageCount, int readPage, boolean reading, boolean finished) {
+        this.name = name;
+        this.year = year;
+        this.author = author;
+        this.summary = summary;
+        this.publisher = publisher;
+        this.pageCount = pageCount;
+        this.readPage = readPage;
+        this.reading = reading;
+        this.finished = finished;
     }
 
     public String getId() {
-        return id;
+        return Id;
     }
 
     public String getName() {
@@ -104,11 +117,11 @@ public class BookEntity {
         this.name = name;
     }
 
-    public LocalDateTime getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(LocalDateTime year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -160,49 +173,40 @@ public class BookEntity {
         this.reading = reading;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getInsertedAt() {
+        return insertedAt;
     }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    @Override
-    public String toString() {
-        return "BookEntity{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", year=" + year +
-                ", author='" + author + '\'' +
-                ", summary='" + summary + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", pageCount=" + pageCount +
-                ", readPage=" + readPage +
-                ", reading=" + reading +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     public static class Builder {
         private String name;
-        private LocalDateTime year;
+        private int year;
         private String author;
         private String summary;
         private String publisher;
         private int pageCount;
         private int readPage;
         private boolean reading;
-        private LocalDateTime createdAt;
-        private LocalDateTime updatedAt;
+        private boolean finished;
 
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder setYear(LocalDateTime year) {
+        public Builder setYear(int year) {
             this.year = year;
             return this;
         }
@@ -237,19 +241,13 @@ public class BookEntity {
             return this;
         }
 
-        public Builder setCreatedAt(LocalDateTime createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
-        public Builder setUpdatedAt(LocalDateTime updatedAt) {
-            this.updatedAt = updatedAt;
+        public Builder setFinished(boolean finished) {
+            this.finished = finished;
             return this;
         }
 
         public BookEntity createBookEntity() {
-            return new BookEntity(name, year, author, summary, publisher, pageCount, readPage, reading, createdAt, updatedAt);
+            return new BookEntity(UUID.randomUUID().toString(), name, year, author, summary, publisher, pageCount, readPage, reading, finished);
         }
     }
-
 }
