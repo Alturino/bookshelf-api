@@ -1,0 +1,10 @@
+.git/
+.gitignore
+.gradle
+.idea
+logs
+src/test/
+.env
+.env.example
+docker-compose.yaml
+Dockerfile

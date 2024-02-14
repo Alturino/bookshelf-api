@@ -2,10 +2,39 @@ services:
   bookshelf-api:
     container_name: bookshelf-api
     build:
-      'Dockerfile'
+      context: .
+      dockerfile: Dockerfile
+    restart: no
+    env_file:
+      - .env
     depends_on:
-      - postgres
       - redis
+      - postgres
+    links:
+      - redis
+      - postgres
+    ports:
+      - ${APPLICATION_PORT}:${APPLICATION_PORT}
+  redis:
+    image: 'redis:7.2.4-alpine3.19'
+    restart: always
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - redis-volume:/data
+  postgres:
+    image: 'postgres:16.1-alpine3.19'
+    restart: always
+    env_file:
+      .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
+volumes:
+  postgresql-volume:
+  redis-volume:
+
   #  elasticsearch:
   #    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.17.10'
   #    environment:
@@ -15,17 +44,8 @@ services:
   #    ports:
   #      - '9200'
   #      - '9300'
-  postgres:
-    container_name: bookshelf-postgres
-    image: 'postgres:16.1-alpine3.19'
-    environment:
-      - 'POSTGRES_DB=bookshelf'
-      - 'POSTGRES_PASSWORD=bookshelf-application'
-      - 'POSTGRES_USER=bookshelf-application'
-    ports:
-      - 5432:5432
-    volumes:
-      - postgresql:/var/lib/postgresql/data
+
+
   #  rabbitmq:
   #    image: 'rabbitmq:3.12.12-alpine'
   #    environment:
@@ -33,13 +53,3 @@ services:
   #      - 'RABBITMQ_DEFAULT_USER=myuser'
   #    ports:
   #      - '5672'
-  redis:
-    container_name: bookshelf-redis
-    image: 'redis:7.2.4-alpine3.19'
-    ports:
-      - 6379:6379
-    volumes:
-      - redis:/data
-volumes:
-  postgresql:
-  redis:

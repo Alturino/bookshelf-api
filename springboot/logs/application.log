@@ -9319,3 +9319,743 @@ org.springframework.expression.spel.SpelParseException: Expression [(#name)(#rea
 2024-02-14T17:11:04.946+07:00  WARN 55196 --- [http-nio-9000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.util.NoSuchElementException: Buku gagal dihapus. Id tidak ditemukan]
 2024-02-14T17:11:05.037+07:00  WARN 55196 --- [http-nio-9000-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction]
 2024-02-14T17:11:05.061+07:00  WARN 55196 --- [http-nio-9000-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction]
+2024-02-14T17:12:13.094+07:00  INFO 55196 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-02-14T17:12:13.212+07:00  INFO 55196 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T17:12:13.233+07:00  INFO 55196 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-02-14T17:12:13.239+07:00  INFO 55196 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-02-14T17:12:13.335+07:00  INFO 55196 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 55196 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T17:12:13.335+07:00  INFO 55196 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T17:12:13.338+07:00  INFO 55196 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T17:12:13.481+07:00  INFO 55196 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2024-02-14T17:12:13.697+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:12:13.697+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-02-14T17:12:13.700+07:00  INFO 55196 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-02-14T17:12:13.700+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2024-02-14T17:12:13.703+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:12:13.703+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-14T17:12:13.706+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interface.
+2024-02-14T17:12:13.709+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:12:13.709+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-14T17:12:13.710+07:00  INFO 55196 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-14T17:12:13.710+07:00  INFO 55196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2024-02-14T17:12:13.832+07:00  INFO 55196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-02-14T17:12:13.832+07:00  INFO 55196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-14T17:12:13.833+07:00  INFO 55196 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-14T17:12:13.841+07:00  INFO 55196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-14T17:12:13.841+07:00  INFO 55196 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 359 ms
+2024-02-14T17:12:14.030+07:00  INFO 55196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-14T17:12:14.032+07:00  INFO 55196 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-14T17:12:14.034+07:00  INFO 55196 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-14T17:12:14.035+07:00  INFO 55196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-02-14T17:12:14.053+07:00  INFO 55196 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@4e839094
+2024-02-14T17:12:14.053+07:00  INFO 55196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-02-14T17:12:14.056+07:00  WARN 55196 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-14T17:12:14.089+07:00  INFO 55196 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-14T17:12:14.090+07:00  WARN 55196 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-14T17:12:14.090+07:00  WARN 55196 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "books" does not exist, skipping
+2024-02-14T17:12:14.147+07:00  INFO 55196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T17:12:14.324+07:00  WARN 55196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-14T17:12:14.959+07:00  INFO 55196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-14T17:12:14.964+07:00  INFO 55196 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-02-14T17:12:15.023+07:00  INFO 55196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9000 (http) with context path ''
+2024-02-14T17:12:15.033+07:00  INFO 55196 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Started LearnSpringbootApplication in 1.716 seconds (process running for 162.383)
+2024-02-14T17:12:15.035+07:00  INFO 55196 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-02-14T17:12:20.058+07:00  INFO 55196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T17:12:20.070+07:00  INFO 55196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-02-14T17:12:20.078+07:00  INFO 55196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-02-14T17:49:16.856+07:00  INFO 63509 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 63509 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T17:49:16.858+07:00  INFO 63509 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T17:49:16.911+07:00  INFO 63509 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T17:49:16.911+07:00  INFO 63509 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T17:49:16.932+07:00  INFO 63509 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T17:49:17.408+07:00  INFO 63509 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2024-02-14T17:49:18.316+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:49:18.317+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-02-14T17:49:18.340+07:00  INFO 63509 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-02-14T17:49:18.340+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+2024-02-14T17:49:18.348+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:49:18.349+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-14T17:49:18.439+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interface.
+2024-02-14T17:49:18.451+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T17:49:18.453+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-14T17:49:18.462+07:00  INFO 63509 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-14T17:49:18.463+07:00  INFO 63509 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-02-14T17:49:19.124+07:00  INFO 63509 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-02-14T17:49:19.132+07:00  INFO 63509 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-14T17:49:19.132+07:00  INFO 63509 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-14T17:49:19.160+07:00  INFO 63509 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-14T17:49:19.161+07:00  INFO 63509 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1743 ms
+2024-02-14T17:49:19.617+07:00  INFO 63509 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-14T17:49:19.652+07:00  INFO 63509 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-14T17:49:19.676+07:00  INFO 63509 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-14T17:49:19.844+07:00  INFO 63509 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-14T17:49:19.862+07:00  INFO 63509 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-14T17:49:19.980+07:00  INFO 63509 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56d7363c
+2024-02-14T17:49:19.981+07:00  INFO 63509 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-14T17:49:20.002+07:00  WARN 63509 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-14T17:49:20.687+07:00  INFO 63509 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-14T17:49:20.703+07:00  WARN 63509 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-14T17:49:20.703+07:00  WARN 63509 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "books" does not exist, skipping
+2024-02-14T17:49:20.784+07:00  INFO 63509 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T17:49:21.063+07:00  INFO 63509 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-02-14T17:49:21.063+07:00  INFO 63509 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-14T17:49:21.475+07:00  WARN 63509 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-14T17:49:22.737+07:00  INFO 63509 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-14T17:49:22.746+07:00  INFO 63509 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-02-14T17:49:22.816+07:00  INFO 63509 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9000 (http) with context path ''
+2024-02-14T17:49:22.828+07:00  INFO 63509 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Started LearnSpringbootApplication in 6.398 seconds (process running for 7.204)
+2024-02-14T17:49:22.840+07:00  INFO 63509 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T17:49:22.872+07:00  INFO 63509 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-14T17:49:22.881+07:00  INFO 63509 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-14T19:42:34.927+07:00  INFO 107319 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 107319 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T19:42:34.928+07:00  INFO 107319 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T19:42:34.965+07:00  INFO 107319 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T19:42:34.965+07:00  INFO 107319 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T19:42:34.981+07:00  INFO 107319 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T19:42:35.405+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   : time="2024-02-14T19:42:35+07:00" level=warning msg="Found orphan containers ([bookshelf-postgres]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2024-02-14T19:42:35.405+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Created
+2024-02-14T19:42:35.405+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Created
+2024-02-14T19:42:35.405+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Created
+2024-02-14T19:42:35.407+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Starting
+2024-02-14T19:42:35.407+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Starting
+2024-02-14T19:42:36.040+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Started
+2024-02-14T19:42:36.056+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Started
+2024-02-14T19:42:36.057+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Starting
+2024-02-14T19:42:36.329+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Started
+2024-02-14T19:42:36.329+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Waiting
+2024-02-14T19:42:36.329+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Waiting
+2024-02-14T19:42:36.330+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Waiting
+2024-02-14T19:42:36.833+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Healthy
+2024-02-14T19:42:36.833+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Healthy
+2024-02-14T19:42:36.834+07:00  INFO 107319 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Healthy
+2024-02-14T19:43:41.919+07:00  INFO 109330 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 109330 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T19:43:41.922+07:00  INFO 109330 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T19:43:41.979+07:00  INFO 109330 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T19:43:41.980+07:00  INFO 109330 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T19:43:42.004+07:00  INFO 109330 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T19:43:42.547+07:00  INFO 109330 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : There are already Docker Compose services running, skipping startup
+2024-02-14T19:43:43.844+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:43:43.845+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-02-14T19:43:43.870+07:00  INFO 109330 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-02-14T19:43:43.871+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2024-02-14T19:43:43.878+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:43:43.879+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-14T19:43:43.975+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2024-02-14T19:43:43.986+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:43:43.987+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-14T19:43:43.996+07:00  INFO 109330 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-14T19:43:43.997+07:00  INFO 109330 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-02-14T19:43:44.672+07:00  INFO 109330 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-02-14T19:43:44.682+07:00  INFO 109330 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-14T19:43:44.683+07:00  INFO 109330 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-14T19:43:44.725+07:00  INFO 109330 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-14T19:43:44.725+07:00  INFO 109330 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2160 ms
+2024-02-14T19:43:45.340+07:00  INFO 109330 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-14T19:43:45.392+07:00  INFO 109330 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-14T19:43:45.424+07:00  INFO 109330 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-14T19:43:45.695+07:00  INFO 109330 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-14T19:43:45.723+07:00  INFO 109330 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-14T19:43:45.874+07:00  INFO 109330 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61710d3f
+2024-02-14T19:43:45.876+07:00  INFO 109330 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-14T19:43:45.924+07:00  WARN 109330 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-14T19:43:46.744+07:00  INFO 109330 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-14T19:43:46.760+07:00  WARN 109330 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-14T19:43:46.760+07:00  WARN 109330 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "books" does not exist, skipping
+2024-02-14T19:43:46.800+07:00  INFO 109330 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:43:46.818+07:00  INFO 109330 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : bael.property null
+2024-02-14T19:43:46.819+07:00  INFO 109330 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : app.name null
+2024-02-14T19:43:46.819+07:00  INFO 109330 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : app.description null
+2024-02-14T19:43:47.222+07:00  INFO 109330 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-02-14T19:43:47.223+07:00  INFO 109330 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-14T19:43:47.916+07:00  WARN 109330 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-14T19:43:48.149+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@61710d3f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.151+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4baf3db7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.151+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7b9d9b5e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.152+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@33601d81 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.152+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1cb84547 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.153+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2ec891e2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.153+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3998a80e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.153+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@aa726a9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.154+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@546bc8c7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:43:48.155+07:00  WARN 109330 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3ec60429 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-02-14T19:44:18.153+07:00  WARN 109330 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Unsatisfied dependency expressed through method 'welcomePageHandlerMapping' parameter 1: Error creating bean with name 'mvcConversionService' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.format.support.FormattingConversionService]: Factory method 'mvcConversionService' threw exception with message: Error creating bean with name 'jsonSchemaConverter' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Unsatisfied dependency expressed through method 'jsonSchemaConverter' parameter 0: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+2024-02-14T19:44:18.155+07:00  INFO 109330 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:44:48.158+07:00  WARN 109330 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08001
+2024-02-14T19:44:48.159+07:00 ERROR 109330 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : HikariPool-1 - Connection is not available, request timed out after 30000ms.
+2024-02-14T19:44:48.160+07:00 ERROR 109330 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2024-02-14T19:44:48.163+07:00  WARN 109330 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30000ms.] [n/a]
+2024-02-14T19:44:48.168+07:00  INFO 109330 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-14T19:44:48.272+07:00  INFO 109330 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-14T19:44:48.283+07:00  INFO 109330 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-02-14T19:44:48.295+07:00  INFO 109330 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-14T19:44:48.307+07:00 ERROR 109330 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Unsatisfied dependency expressed through method 'welcomePageHandlerMapping' parameter 1: Error creating bean with name 'mvcConversionService' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.format.support.FormattingConversionService]: Factory method 'mvcConversionService' threw exception with message: Error creating bean with name 'jsonSchemaConverter' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Unsatisfied dependency expressed through method 'jsonSchemaConverter' parameter 0: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at com.example.learnspringboot.LearnSpringbootApplication.main(LearnSpringbootApplication.java:18) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcConversionService' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.format.support.FormattingConversionService]: Factory method 'mvcConversionService' threw exception with message: Error creating bean with name 'jsonSchemaConverter' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Unsatisfied dependency expressed through method 'jsonSchemaConverter' parameter 0: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.format.support.FormattingConversionService]: Factory method 'mvcConversionService' threw exception with message: Error creating bean with name 'jsonSchemaConverter' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Unsatisfied dependency expressed through method 'jsonSchemaConverter' parameter 0: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jsonSchemaConverter' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Unsatisfied dependency expressed through method 'jsonSchemaConverter' parameter 0: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:665) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:653) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.boot.convert.ApplicationConversionService.addBeans(ApplicationConversionService.java:276) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.addFormatters(WebMvcAutoConfiguration.java:319) ~[spring-boot-autoconfigure-3.2.2.jar:3.2.2]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurerComposite.addFormatters(WebMvcConfigurerComposite.java:81) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration.addFormatters(DelegatingWebMvcConfiguration.java:78) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcConversionService(WebMvcAutoConfiguration.java:510) ~[spring-boot-autoconfigure-3.2.2.jar:3.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 37 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistentEntities' defined in class path resource [org/springframework/data/rest/webmvc/config/RepositoryRestMvcConfiguration.class]: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 56 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.mapping.context.PersistentEntities]: Factory method 'persistentEntities' threw exception with message: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 70 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:665) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:653) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1377) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:321) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration.persistentEntities(RepositoryRestMvcConfiguration.java:315) ~[spring-data-rest-webmvc-4.2.2.jar:4.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 71 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:485) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 88 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 102 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:639) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1164) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:224) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1323) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1284) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:486) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:341) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:334) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1249) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcCustomConversions(AbstractJdbcConfiguration.java:154) ~[spring-data-jdbc-3.2.2.jar:3.2.2]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcCustomConversions(JdbcRepositoriesAutoConfiguration.java:121) ~[spring-boot-autoconfigure-3.2.2.jar:3.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 103 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177) ~[spring-beans-6.1.3.jar:6.1.3]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 123 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84) ~[spring-jdbc-6.1.3.jar:6.1.3]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342) ~[spring-jdbc-6.1.3.jar:6.1.3]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:108) ~[spring-data-jdbc-3.2.2.jar:3.2.2]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:78) ~[spring-data-jdbc-3.2.2.jar:3.2.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1685) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647) ~[na:na]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:80) ~[spring-data-jdbc-3.2.2.jar:3.2.2]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:227) ~[spring-data-jdbc-3.2.2.jar:3.2.2]
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcDialect(JdbcRepositoriesAutoConfiguration.java:144) ~[spring-boot-autoconfigure-3.2.2.jar:3.2.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140) ~[spring-beans-6.1.3.jar:6.1.3]
+	... 124 common frames omitted
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30002ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:181) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:146) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-6.1.3.jar:6.1.3]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-6.1.3.jar:6.1.3]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-6.1.3.jar:6.1.3]
+	... 142 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:733) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712) ~[HikariCP-5.0.1.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
+	... 14 common frames omitted
+
+2024-02-14T19:49:17.793+07:00  INFO 110434 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 110434 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T19:49:17.795+07:00  INFO 110434 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T19:49:17.828+07:00  INFO 110434 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T19:49:17.828+07:00  INFO 110434 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T19:49:17.843+07:00  INFO 110434 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T19:49:18.203+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   : time="2024-02-14T19:49:18+07:00" level=warning msg="Found orphan containers ([bookshelf-postgres]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2024-02-14T19:49:18.204+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Created
+2024-02-14T19:49:18.204+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Created
+2024-02-14T19:49:18.204+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Created
+2024-02-14T19:49:18.205+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Starting
+2024-02-14T19:49:18.206+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Starting
+2024-02-14T19:49:18.529+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Started
+2024-02-14T19:49:18.530+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Started
+2024-02-14T19:49:18.530+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Starting
+2024-02-14T19:49:18.777+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Started
+2024-02-14T19:49:18.777+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Waiting
+2024-02-14T19:49:18.777+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Waiting
+2024-02-14T19:49:18.777+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Waiting
+2024-02-14T19:49:19.285+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Healthy
+2024-02-14T19:49:19.285+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Healthy
+2024-02-14T19:49:19.286+07:00  INFO 110434 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Healthy
+2024-02-14T19:50:09.042+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:50:09.043+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-02-14T19:50:09.075+07:00  INFO 110434 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-02-14T19:50:09.076+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+2024-02-14T19:50:09.085+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:50:09.086+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-14T19:50:09.206+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 1 JPA repository interface.
+2024-02-14T19:50:09.219+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:50:09.220+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-14T19:50:09.231+07:00  INFO 110434 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-14T19:50:09.231+07:00  INFO 110434 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-02-14T19:50:10.325+07:00  INFO 110434 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-02-14T19:50:10.342+07:00  INFO 110434 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-14T19:50:10.343+07:00  INFO 110434 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-14T19:50:10.397+07:00  INFO 110434 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-14T19:50:10.398+07:00  INFO 110434 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2490 ms
+2024-02-14T19:50:11.053+07:00  INFO 110434 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-14T19:50:11.115+07:00  INFO 110434 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-14T19:50:11.154+07:00  INFO 110434 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-14T19:50:11.400+07:00  INFO 110434 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-14T19:50:11.427+07:00  INFO 110434 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-14T19:50:11.613+07:00  INFO 110434 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@63c179ed
+2024-02-14T19:50:11.615+07:00  INFO 110434 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-14T19:50:11.674+07:00  WARN 110434 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-14T19:50:12.757+07:00  INFO 110434 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-14T19:50:12.837+07:00  INFO 110434 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:50:13.289+07:00  INFO 110434 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-02-14T19:50:13.289+07:00  INFO 110434 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-14T19:50:13.800+07:00  WARN 110434 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-14T19:50:15.084+07:00  INFO 110434 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-14T19:50:15.101+07:00  INFO 110434 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-02-14T19:50:15.194+07:00  WARN 110434 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-02-14T19:50:15.197+07:00  INFO 110434 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:50:15.208+07:00  INFO 110434 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-14T19:50:15.213+07:00  INFO 110434 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-14T19:50:15.244+07:00  INFO 110434 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-14T19:50:15.261+07:00 ERROR 110434 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
+
+2024-02-14T19:51:12.195+07:00  INFO 112397 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 112397 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T19:51:12.197+07:00  INFO 112397 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T19:51:12.240+07:00  INFO 112397 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T19:51:12.240+07:00  INFO 112397 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T19:51:12.259+07:00  INFO 112397 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T19:51:12.666+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   : time="2024-02-14T19:51:12+07:00" level=warning msg="Found orphan containers ([bookshelf-postgres]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2024-02-14T19:51:12.666+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Created
+2024-02-14T19:51:12.666+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Created
+2024-02-14T19:51:12.666+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Created
+2024-02-14T19:51:12.668+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Starting
+2024-02-14T19:51:12.668+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Starting
+2024-02-14T19:51:13.015+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Started
+2024-02-14T19:51:13.052+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Started
+2024-02-14T19:51:13.052+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Starting
+2024-02-14T19:51:13.317+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Started
+2024-02-14T19:51:13.318+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Waiting
+2024-02-14T19:51:13.318+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Waiting
+2024-02-14T19:51:13.318+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Waiting
+2024-02-14T19:51:13.829+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Healthy
+2024-02-14T19:51:13.833+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Healthy
+2024-02-14T19:51:13.834+07:00  INFO 112397 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Healthy
+2024-02-14T19:53:15.183+07:00 ERROR 112397 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.docker.compose.lifecycle.ReadinessTimeoutException: Readiness timeout of PT2M reached while waiting for services [bookshelf-api]
+	at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.waitUntilReady(ServiceReadinessChecks.java:83) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:139) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:149) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:137) ~[spring-context-6.1.3.jar:6.1.3]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72) ~[spring-boot-3.2.2.jar:3.2.2]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:432) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.2.jar:3.2.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.2.jar:3.2.2]
+	at com.example.learnspringboot.LearnSpringbootApplication.main(LearnSpringbootApplication.java:20) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.2.jar:3.2.2]
+	Suppressed: org.springframework.boot.docker.compose.lifecycle.ServiceNotReadyException: Immediate disconnect while connecting to port 9000
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:71) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:58) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+		at org.springframework.boot.docker.compose.lifecycle.TcpConnectServiceReadinessCheck.check(TcpConnectServiceReadinessCheck.java:48) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+		at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.check(ServiceReadinessChecks.java:97) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+		at org.springframework.boot.docker.compose.lifecycle.ServiceReadinessChecks.waitUntilReady(ServiceReadinessChecks.java:77) ~[spring-boot-docker-compose-3.2.2.jar:3.2.2]
+		... 22 common frames omitted
+
+2024-02-14T19:53:59.675+07:00  INFO 115696 --- [restartedMain] c.e.l.LearnSpringbootApplication         : Starting LearnSpringbootApplication using Java 21.0.1 with PID 115696 (/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main started by onirutla in /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot)
+2024-02-14T19:53:59.676+07:00  INFO 115696 --- [restartedMain] c.e.l.LearnSpringbootApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T19:53:59.711+07:00  INFO 115696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-14T19:53:59.711+07:00  INFO 115696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-14T19:53:59.726+07:00  INFO 115696 --- [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file '/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/docker-compose.yaml'
+2024-02-14T19:54:00.119+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   : time="2024-02-14T19:54:00+07:00" level=warning msg="Found orphan containers ([bookshelf-postgres]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+2024-02-14T19:54:00.119+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Created
+2024-02-14T19:54:00.119+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Created
+2024-02-14T19:54:00.119+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Created
+2024-02-14T19:54:00.121+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Starting
+2024-02-14T19:54:00.121+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Starting
+2024-02-14T19:54:00.394+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Started
+2024-02-14T19:54:00.412+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Started
+2024-02-14T19:54:00.413+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Starting
+2024-02-14T19:54:00.670+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Started
+2024-02-14T19:54:00.671+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Waiting
+2024-02-14T19:54:00.671+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Waiting
+2024-02-14T19:54:00.671+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Waiting
+2024-02-14T19:54:01.174+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container bookshelf-api  Healthy
+2024-02-14T19:54:01.174+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-postgres-1  Healthy
+2024-02-14T19:54:01.175+07:00  INFO 115696 --- [OutputReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container springboot-redis-1  Healthy
+2024-02-14T19:54:29.703+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:54:29.704+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-02-14T19:54:29.738+07:00  INFO 115696 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-02-14T19:54:29.738+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
+2024-02-14T19:54:29.746+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:54:29.747+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-14T19:54:29.856+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interface.
+2024-02-14T19:54:29.865+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-14T19:54:29.866+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-14T19:54:29.875+07:00  INFO 115696 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.learnspringboot.book.BookRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-02-14T19:54:29.875+07:00  INFO 115696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2024-02-14T19:54:30.836+07:00  INFO 115696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9000 (http)
+2024-02-14T19:54:30.850+07:00  INFO 115696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-14T19:54:30.851+07:00  INFO 115696 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-14T19:54:30.892+07:00  INFO 115696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-14T19:54:30.892+07:00  INFO 115696 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2248 ms
+2024-02-14T19:54:31.498+07:00  INFO 115696 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-14T19:54:31.547+07:00  INFO 115696 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-14T19:54:31.576+07:00  INFO 115696 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-14T19:54:31.817+07:00  INFO 115696 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-14T19:54:31.845+07:00  INFO 115696 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-14T19:54:32.005+07:00  INFO 115696 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66ea816
+2024-02-14T19:54:32.006+07:00  INFO 115696 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-14T19:54:32.047+07:00  WARN 115696 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-14T19:54:33.115+07:00  INFO 115696 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-14T19:54:33.134+07:00  WARN 115696 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-02-14T19:54:33.134+07:00  WARN 115696 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "books" does not exist, skipping
+2024-02-14T19:54:33.178+07:00  INFO 115696 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:54:33.208+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: CONSOLE_LOG_CHARSETvalue: UTF-8
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DBUS_SESSION_BUS_ADDRESSvalue: unix:path=/run/user/1000/bus
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DEBUGINFOD_URLSvalue: https://debuginfod.fedoraproject.org/ 
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DESKTOP_SESSIONvalue: gnome
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DISPLAYvalue: :0
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DOTNET_BUNDLE_EXTRACT_BASE_DIRvalue: /home/onirutla/.cache/dotnet_bundle_extract
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: DOTNET_ROOTvalue: /usr/lib64/dotnet
+2024-02-14T19:54:33.209+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: EDITORvalue: /usr/bin/nano
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: FILE_LOG_CHARSETvalue: UTF-8
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GDMSESSIONvalue: gnome
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GDM_LANGvalue: en_US.UTF-8
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GIO_LAUNCHED_DESKTOP_FILEvalue: /home/onirutla/.local/share/applications/jetbrains-idea-ddd633a1-a104-4de8-9eba-1e5072160456.desktop
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GIO_LAUNCHED_DESKTOP_FILE_PIDvalue: 11936
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GJS_DEBUG_OUTPUTvalue: stderr
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GJS_DEBUG_TOPICSvalue: JS ERROR;JS LOG
+2024-02-14T19:54:33.210+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: GNOME_SETUP_DISPLAYvalue: :1
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: HISTCONTROLvalue: ignoredups
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: HISTSIZEvalue: 1000
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: HOMEvalue: /home/onirutla
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: HOSTNAMEvalue: asus-tuf-fx505gt
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: IJ_RESTARTER_LOGvalue: /home/onirutla/.cache/JetBrains/IntelliJIdea2023.3/log/restarter.log
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: INVOCATION_IDvalue: 0294483ed35749e4b63288028f6543c8
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: JOURNAL_STREAMvalue: 8:17804
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: LANGvalue: en_US.UTF-8
+2024-02-14T19:54:33.211+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: LESSOPENvalue: ||/usr/bin/lesspipe.sh %s
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: LOGNAMEvalue: onirutla
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: LOG_FILEvalue: logs/application.log
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: LOG_PATHvalue: logs/
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: MAILvalue: /var/spool/mail/onirutla
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: MANAGERPIDvalue: 2067
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: MEMORY_PRESSURE_WATCHvalue: /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: MEMORY_PRESSURE_WRITEvalue: c29tZSAyMDAwMDAgMjAwMDAwMAA=
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: OLDPWDvalue: /home/onirutla
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: PATHvalue: /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin:/home/onirutla/.dotnet/tools:/usr/local/rvm/bin
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: PIDvalue: 115696
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: PWDvalue: /home/onirutla
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: QT_IM_MODULEvalue: ibus
+2024-02-14T19:54:33.212+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: SESSION_MANAGERvalue: local/unix:@/tmp/.ICE-unix/2402,unix/unix:/tmp/.ICE-unix/2402
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: SHELLvalue: /usr/bin/zsh
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: SHLVLvalue: 0
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: SSH_AUTH_SOCKvalue: /run/user/1000/keyring/ssh
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: SYSTEMD_EXEC_PIDvalue: 2448
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: USERvalue: onirutla
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: USERNAMEvalue: onirutla
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: WAYLAND_DISPLAYvalue: wayland-0
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XAUTHORITYvalue: /run/user/1000/.mutter-Xwaylandauth.MM3SI2
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_ACTIVATION_TOKENvalue: gnome-shell/IntelliJ IDEA Ultimate 2023.3.4/2448-1-asus-tuf-fx505gt_TIME6541307
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_CURRENT_DESKTOPvalue: GNOME
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_DATA_DIRSvalue: /home/onirutla/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_MENU_PREFIXvalue: gnome-
+2024-02-14T19:54:33.213+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_RUNTIME_DIRvalue: /run/user/1000
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_SESSION_CLASSvalue: user
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_SESSION_DESKTOPvalue: gnome
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XDG_SESSION_TYPEvalue: wayland
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: XMODIFIERSvalue: @im=ibus
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: catalina.basevalue: /tmp/tomcat.9000.14036457469867019477
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: catalina.homevalue: /tmp/tomcat.9000.14036457469867019477
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: catalina.useNamingvalue: false
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: com.zaxxer.hikari.pool_numbervalue: 1
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: file.encodingvalue: UTF-8
+2024-02-14T19:54:33.214+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: file.separatorvalue: /
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.awt.headlessvalue: true
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.class.pathvalue: /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/classes/java/main:/home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot/build/resources/main:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/3.2.2/5d4ce10e0c8d4a6cc040a1836280f379893a8213/spring-boot-devtools-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-docker-compose/3.2.2/aa43ec993748785a3f72f9c7153f4d7824629952/spring-boot-docker-compose-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.6.0/7614cfce466145b84972781ab0079b8dea49e363/postgresql-42.6.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/3.2.2/c2ecd7cb4880408ba131c14fe6521c8c28790bb6/spring-boot-actuator-autoconfigure-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.2.2/5c407409f8d260a4bc6e173d16fc3b36e6adec21/spring-boot-autoconfigure-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/3.2.2/6acab5967fca41db8c4caaed26af733f713a8d43/spring-boot-actuator-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.2.2/9f274d1bd822c4c57bb5b37ecae2380b980f567/spring-boot-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-rest-webmvc/4.2.2/79df9f9025ab70934872f390ce310ac79ff35201/spring-data-rest-webmvc-4.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.15.3/4a20a0e104931bfa72f24ef358c2eb63f1ef2aaf/jackson-datatype-jsr310-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-rest-core/4.2.2/ffe49c58539dd7b7991571ddbe51bbb22838ab5a/spring-data-rest-core-4.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.15.3/79baf4e605eb3bbb60b1c475d44a7aecceea1d60/jackson-annotations-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.15.3/80158cb020c7bd4e4ba94d8d752a65729dc943b2/jackson-datatype-jdk8-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.15.3/60d600567c1862840397bf9ff5a92398edc5797b/jackson-core-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.15.3/8d251b90c5358677e7d8161e0c2488e6f84f49da/jackson-module-parameter-names-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.15.3/a734bc2c47a9453c4efa772461a3aeb273c010d9/jackson-databind-2.15.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-jakarta9/1.12.2/381f991e01c257c0c49bf48ea75db759bcd3689a/micrometer-jakarta9-1.12.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.1.3/f4738a57787add6567e0679eebb1b499a11019cc/spring-webmvc-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.hateoas/spring-hateoas/2.2.0/ed2b27f280d2662ccde2b92fd474ef4aa393119/spring-hateoas-2.2.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.1.3/cc3459b4abd436331608ddb6424886875f7086ab/spring-web-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jdbc/3.2.2/72ec388bb0ab037fc2242cd220910555d5d7133d/spring-data-jdbc-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.2.2/f91a3896c2a6139ac1da1fd8ff4350ca4b0e409e/spring-data-jpa-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.2.2/bb3f53e122e9a9762dac75b993c788ad3a190342/spring-data-redis-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.1.3/55ff73910c4851c37f6919a071453ddc40f7dc38/spring-context-support-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-relational/3.2.2/f4c61d4d8a3dbc6687c3c5bb01dd7434e082d8db/spring-data-relational-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.2.2/ae0536877aab56c7e27acb291f631a62cdd1b197/spring-data-keyvalue-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.plugin/spring-plugin-core/3.0.0/d56aa02dd7272dca30aa598dc8b72e823227046a/spring-plugin-core-3.0.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.1.3/c63f038933701058fd7578460c66dbe2d424915/spring-context-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.12.2/ad701a658e92a3122ee4b2418261daa6821e5b9d/micrometer-core-1.12.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.12.2/e082b05a2527fc24ea6fbe4c4b7ae34653aace81/micrometer-observation-1.12.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.4.1.Final/3dcefddf6609e6491d37208bcc0cab1273598cbd/hibernate-core-6.4.1.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aspects/6.1.3/c8b5dde3568dc5df6109916d8ad4866efe4e61fd/spring-aspects-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.3.1.RELEASE/831e550bb71e6a539bd471ad258f6be7590e9aba/lettuce-core-6.3.1.RELEASE.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/5.0.1/a74c7f0a37046846e88d54f7cb6ea6d565c65f9c/HikariCP-5.0.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/6.1.3/98572e26c6d011c9710545085358a4e35e27649/spring-orm-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/6.1.3/be4b30cc956b26f13e04ccadc2b0575038c531bb/spring-jdbc-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.18/b2c4dc05abd363c63b245523bb071727aa2f1046/tomcat-embed-el-10.1.18.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/8.0.1.Final/e49e116b3d3928060599b176b3538bb848718e95/hibernate-validator-8.0.1.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.31.0/eeefd4af42e2f4221d145c1791582f91868f99ab/checker-qual-3.31.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.2.2/9b0b0f5f5bc793463a81171d6889809abc14b19b/spring-data-commons-3.2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.1.3/7750337bf46a2ff248685915c7cc88d3bef2f666/spring-tx-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.1.3/4d9bd4bd9b8bedf9ef151b45c79766b336117b9a/spring-aop-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.1.3/d651e85c2ea70411cea317b538bc6c713bc683fa/spring-oxm-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.1.3/c2df4210e796d3a27efc1f22621aa4e2c6cd985f/spring-beans-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.1.3/7c35fc3d7525a024fdde8a5d7597a6a8a4e59d7/spring-expression-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.1.3/a002e96e780954cc3ac4cd70fd3bb16accdc47ed/spring-core-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.2/3af797a25458550a16bf89acc8e4ab2b7f2bfce0/snakeyaml-2.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.12.2/b44127d8ec7b3ef11a01912d1e6474e1167f3929/micrometer-commons-1.12.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.4.14/d98bc162275134cdf1518774da4a2a17ef6fb94d/logback-classic-1.4.14.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.21.1/d77b2ba81711ed596cd797cc2b5b5bd7409d841c/log4j-to-slf4j-2.21.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.11/279356f8e873b1a26badd8bbb3284b5c3b22c770/jul-to-slf4j-2.0.11.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.jayway.jsonpath/json-path/2.8.0/b4ab3b7a9e425655a0ca65487bbbd6d7ddb75160/json-path-2.8.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.11/ad96c3f8cf895e696dd35c2bc8e8ebe710be9e6d/slf4j-api-2.0.11.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.9.21/beaabaea95c7f3330f415c72ee0ffe79b51d172f/aspectjweaver-1.9.21.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/66901fa1c373c6aff65c13791cc11da72060a8d6/jakarta.persistence-api-3.1.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/51a520e3fae406abb84e2e1148e6746ce3f80a1a/jakarta.transaction-api-2.0.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.3.Final/c88fc1d8a96d4c3491f55d4317458ccad53ca663/jboss-logging-3.5.3.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/6.0.6.Final/77a5f94b56d49508e0ee334751db5b78e5ccd50c/hibernate-commons-annotations-6.0.6.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.smallrye/jandex/3.1.2/a6c1c89925c7df06242b03dddb353116ceb9584c/jandex-3.1.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.6.0/91affab6f84a2182fce5dd72a8d01bc14346dddd/classmate-1.6.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.11/725602eb7c8c56b51b9c21f273f9df5c909d9e7d/byte-buddy-1.14.11.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.4/7180c50ef8bd127bb1dd645458b906cffcf6c2b5/jaxb-runtime-4.0.4.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/4.0.4/2d5aadd02af86f1e9d8c6f7e8501673f915d4e25/jaxb-core-4.0.4.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.1/ca2330866cbc624c7e5ce982e121db1125d23e15/jakarta.xml.bind-api-4.0.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/4c28afe1991a941d7702fe1362c365f0a8641d1e/jakarta.inject-api-2.0.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.13.0/5a02e48521624faaf5ff4d99afc88b01686af655/antlr4-runtime-4.13.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.105.Final/7e997e63d0a445c4b352bcd38474d50f06f2eaf1/netty-handler-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.105.Final/8bb8ab3a8f1e730c6e7d1d1cf8fc24221eacc6cd/netty-transport-native-unix-common-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.105.Final/4733830b4b2b9111e9bf8136691d07b20027cd51/netty-codec-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.105.Final/5184e1308ed7d853d7061b4e21e47e8de43a28df/netty-transport-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.105.Final/e69687e013ded60f3f9054164e121c2702200711/netty-resolver-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.105.Final/c1c1b4d2c89d2f74c80a2701c124ecfde1ecf067/netty-buffer-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.105.Final/8438fc1de4c10301bb53ceb49ed8db74bd40cc2c/netty-common-4.1.105.Final.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.6.2/679ac38d031c154374182748491a177a76c890e1/reactor-core-3.6.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/92b6631659ba35ca09e44874d3eb936edfeee532/jakarta.validation-api-3.0.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.18/83a3bc6898f2ceed2357ba231a5e83dc2016d454/tomcat-embed-websocket-10.1.18.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.18/bff6c34649d1dd7b509e819794d73ba795947dcf/tomcat-embed-core-10.1.18.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.1.3/a715e091ee86243ee94534a03f3c26b4e48de31e/spring-jcl-6.1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.12/6eb7552156e0d517ae80cc2247be1427c8d90452/HdrHistogram-2.1.12.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/769c0b82cb2421c8256300e907298a9410a2a3d3/LatencyUtils-2.0.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.github.jsqlparser/jsqlparser/4.6/a4d1bda17df913c8b3ff12d39e35e9efd3a4e01f/jsqlparser-4.6.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.1/eaafaf4eb71b400e4136fc3a286f50e34a68ecb7/angus-activation-2.0.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.2/640c0d5aff45dbff1e1a1bc09673ff3a02b1ba12/jakarta.activation-api-2.1.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.atteo/evo-inflector/1.3/4cf8b5f363c60e63f8b7688ac053590460f2768e/evo-inflector-1.3.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.4.14/4d3c2248219ac0effeb380ed4c5280a80bf395e8/logback-core-1.4.14.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.21.1/74c65e87b9ce1694a01524e192d7be989ba70486/log4j-api-2.21.1.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/4.0.4/cfd2bcf08782673ac370694fdf2cf76dbaa607ef/txw2-4.0.4.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.2/18ec117c85f3ba0ac65409136afa8e42bc74e739/istack-commons-runtime-4.1.2.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.5.0/57a64f421b472849c40e77d2e7cce3a141b41e99/json-smart-2.5.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.5.0/aca011492dfe9c26f4e0659028a4fe0970829dd8/accessors-smart-2.5.0.jar:/home/onirutla/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.class.versionvalue: 65.0
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.homevalue: /home/onirutla/.sdkman/candidates/java/21.0.1-amzn
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.io.tmpdirvalue: /tmp
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.library.pathvalue: /usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+2024-02-14T19:54:33.215+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.runtime.namevalue: OpenJDK Runtime Environment
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.runtime.versionvalue: 21.0.1+12-LTS
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.specification.namevalue: Java Platform API Specification
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.specification.vendorvalue: Oracle Corporation
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.specification.versionvalue: 21
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vendorvalue: Amazon.com Inc.
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vendor.urlvalue: https://aws.amazon.com/corretto/
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vendor.url.bugvalue: https://github.com/corretto/corretto-21/issues/
+2024-02-14T19:54:33.216+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vendor.versionvalue: Corretto-21.0.1.12.1
+2024-02-14T19:54:33.217+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.versionvalue: 21.0.1
+2024-02-14T19:54:33.217+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.version.datevalue: 2023-10-17
+2024-02-14T19:54:33.218+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.compressedOopsModevalue: Zero based
+2024-02-14T19:54:33.218+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.infovalue: mixed mode, emulated-client, sharing
+2024-02-14T19:54:33.218+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.namevalue: OpenJDK 64-Bit Server VM
+2024-02-14T19:54:33.218+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.specification.namevalue: Java Virtual Machine Specification
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.specification.vendorvalue: Oracle Corporation
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.specification.versionvalue: 21
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.vendorvalue: Amazon.com Inc.
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: java.vm.versionvalue: 21.0.1+12-LTS
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: jdk.debugvalue: release
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: line.separatorvalue: 
+
+2024-02-14T19:54:33.219+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: logging.file.namevalue: logs/application.log
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: logging.file.pathvalue: logs/
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: native.encodingvalue: UTF-8
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: org.jboss.logging.providervalue: slf4j
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: os.archvalue: amd64
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: os.namevalue: Linux
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: os.versionvalue: 6.7.4-200.fc39.x86_64
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: path.separatorvalue: :
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: rvm_bin_pathvalue: /usr/local/rvm/bin
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: rvm_pathvalue: /usr/local/rvm
+2024-02-14T19:54:33.220+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: rvm_prefixvalue: /usr/local
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: rvm_promptlessvalue: 1
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: rvm_versionvalue: 1.29.12 (latest)
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.error.include-binding-errorsvalue: always
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.error.include-messagevalue: always
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.error.include-stacktracevalue: always
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.portvalue: 9000
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.servlet.jsp.init-parameters.developmentvalue: true
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: server.servlet.session.persistentvalue: true
+2024-02-14T19:54:33.221+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.cache.redis.time-to-livevalue: 600000
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.cache.typevalue: redis
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.data.redis.hostvalue: bookshelf-redis
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.data.redis.portvalue: 6379
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.datasource.driver-class-namevalue: org.postgresql.Driver
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.datasource.passwordvalue: bookshelf-application
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.datasource.urlvalue: jdbc:postgresql://bookshelf-postgres:5432/bookshelf
+2024-02-14T19:54:33.222+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.datasource.usernamevalue: bookshelf-application
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.docker.compose.readiness.waitvalue: only-if-started
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.freemarker.cachevalue: false
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.graphql.graphiql.enabledvalue: true
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.groovy.template.cachevalue: false
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.h2.console.enabledvalue: true
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.jpa.databasevalue: postgresql
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.jpa.generate-ddlvalue: true
+2024-02-14T19:54:33.223+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.jpa.hibernate.ddl-autovalue: create-drop
+2024-02-14T19:54:33.224+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.mustache.servlet.cachevalue: false
+2024-02-14T19:54:33.224+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.mvc.log-resolved-exceptionvalue: true
+2024-02-14T19:54:33.224+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.output.ansi.enabledvalue: always
+2024-02-14T19:54:33.224+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.reactor.netty.shutdown-quiet-periodvalue: 0s
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.template.provider.cachevalue: false
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.thymeleaf.cachevalue: false
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.web.resources.cache.periodvalue: 0
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: spring.web.resources.chain.cachevalue: false
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: stderr.encodingvalue: UTF-8
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: stdout.encodingvalue: UTF-8
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.arch.data.modelvalue: 64
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.boot.library.pathvalue: /home/onirutla/.sdkman/candidates/java/21.0.1-amzn/lib
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.cpu.endianvalue: little
+2024-02-14T19:54:33.225+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.io.unicode.encodingvalue: UnicodeLittle
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.java.commandvalue: com.example.learnspringboot.LearnSpringbootApplication
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.java.launchervalue: SUN_STANDARD
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.jnu.encodingvalue: UTF-8
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: sun.management.compilervalue: HotSpot 64-Bit Tiered Compilers
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.countryvalue: US
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.dirvalue: /home/onirutla/Personal/coding/projects/bookshelf-api-hapi/springboot
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.homevalue: /home/onirutla
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.languagevalue: en
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.namevalue: onirutla
+2024-02-14T19:54:33.226+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.timezonevalue: Asia/Jakarta
+2024-02-14T19:54:33.227+07:00  INFO 115696 --- [restartedMain] c.e.l.EnvironmentPropertiesPrinter       : key: user.variantvalue: 
+2024-02-14T19:54:33.660+07:00  INFO 115696 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-02-14T19:54:33.661+07:00  INFO 115696 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-14T19:54:34.183+07:00  WARN 115696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-14T19:54:35.452+07:00  INFO 115696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-14T19:54:35.467+07:00  INFO 115696 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-02-14T19:54:35.558+07:00  WARN 115696 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-02-14T19:54:35.562+07:00  INFO 115696 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-14T19:54:35.574+07:00  INFO 115696 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-14T19:54:35.581+07:00  INFO 115696 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-14T19:54:35.605+07:00  INFO 115696 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-14T19:54:35.619+07:00 ERROR 115696 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
+
