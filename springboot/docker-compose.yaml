@@ -15,18 +15,19 @@ services:
       - postgres
     ports:
       - ${APPLICATION_PORT}:${APPLICATION_PORT}
+    volumes:
+      - gradle-cache:/home/gradle/.cache
   redis:
-    image: 'redis:7.2.4-alpine3.19'
+    image: "redis:7.2.4-alpine3.19"
     restart: always
     ports:
       - ${REDIS_PORT}:${REDIS_PORT}
     volumes:
       - redis-volume:/data
   postgres:
-    image: 'postgres:16.1-alpine3.19'
+    image: "postgres:16.1-alpine3.19"
     restart: always
-    env_file:
-      .env
+    env_file: .env
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     volumes:
@@ -34,22 +35,22 @@ services:
 volumes:
   postgresql-volume:
   redis-volume:
+  gradle-cache:
+    name: "gradle-cache"
+    #  elasticsearch:
+    #    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.17.10'
+    #    environment:
+    #      - 'ELASTIC_PASSWORD=secret'
+    #      - 'discovery.type=single-node'
+    #      - 'xpack.security.enabled=false'
+    #    ports:
+    #      - '9200'
+    #      - '9300'
 
-  #  elasticsearch:
-  #    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.17.10'
-  #    environment:
-  #      - 'ELASTIC_PASSWORD=secret'
-  #      - 'discovery.type=single-node'
-  #      - 'xpack.security.enabled=false'
-  #    ports:
-  #      - '9200'
-  #      - '9300'
-
-
-  #  rabbitmq:
-  #    image: 'rabbitmq:3.12.12-alpine'
-  #    environment:
-  #      - 'RABBITMQ_DEFAULT_PASS=secret'
-  #      - 'RABBITMQ_DEFAULT_USER=myuser'
-  #    ports:
-  #      - '5672'
+    #  rabbitmq:
+    #    image: 'rabbitmq:3.12.12-alpine'
+    #    environment:
+    #      - 'RABBITMQ_DEFAULT_PASS=secret'
+    #      - 'RABBITMQ_DEFAULT_USER=myuser'
+    #    ports:
+    #      - '5672'

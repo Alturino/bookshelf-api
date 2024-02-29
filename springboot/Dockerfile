@@ -2,11 +2,11 @@ FROM gradle:8.5-jdk21-alpine as builder
 WORKDIR /usr/src/app/
 
 COPY . .
-RUN ./gradlew clean build -v && \
-    ./gradlew bootJar -v
+RUN gradle clean build -v && \
+  gradle bootJar -v
 
 FROM eclipse-temurin:21.0.1_12-jre-alpine as production
-RUN apk add dumb-init
+RUN apk add --no-cache dumb-init 
 WORKDIR /usr/src/app/
 
 RUN addgroup --system javauser && adduser -S -s /bin/false -G javauser javauser
