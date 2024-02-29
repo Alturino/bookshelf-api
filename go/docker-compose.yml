@@ -1,0 +1,41 @@
+services:
+  bookshelf-api:
+    container_name: bookshelf-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - postgres
+    links:
+      - redis
+      - postgres
+    ports:
+      - ${APPLICATION_PORT}:${APPLICATION_PORT}
+  redis:
+    container_name: redis
+    image: "redis:7.2.4-alpine3.19"
+    restart: always
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    env_file:
+      - .env
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+  postgres:
+    container_name: postgres
+    image: "postgres:16.1-alpine3.19"
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
+volumes:
+  postgresql-volume:
+  redis-volume:

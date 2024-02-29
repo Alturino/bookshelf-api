@@ -5,14 +5,22 @@ import (
 )
 
 type applicationConfig struct {
-	ApplicationPort  int    `env:"APPLICATION_PORT"  envDefault:"9000"`
-	PostgresDb       string `env:"POSTGRES_DB"       envDefault:"bookshelf"`
-	PostgresHost     string `env:"POSTGRES_HOST"     envDefault:"postgres"`
-	PostgresPassword string `env:"POSTGRES_PASSWORD" envDefault:"bookshelf-application"`
-	PostgresPort     int    `env:"POSTGRES_PORT"     envDefault:"5432"`
-	PostgresUser     string `env:"POSTGRES_USER"     envDefault:"bookshelf-application"`
-	RedisHost        string `env:"REDIS_HOST"        envDefault:"redis"`
-	RedisPort        int    `env:"REDIS_PORT"        envDefault:"6379"`
+	ApplicationPort       int    `env:"APPLICATION_PORT"`
+	AppicationHost        string `env:"APPLICATION_HOST"`
+	ApplicationAddress    string `env:"APPLICATION_ADDRESS"`
+	PostgresURL           string `env:"POSTGRES_URL"`
+	PostgresDb            string `env:"POSTGRES_DB"`
+	PostgresHost          string `env:"POSTGRES_HOST"`
+	PostgresPassword      string `env:"POSTGRES_PASSWORD"`
+	PostgresPort          int    `env:"POSTGRES_PORT"`
+	PostgresUser          string `env:"POSTGRES_USER"`
+	PostgresMigrationPath string `env:"POSTGRES_MIGRATION_PATH"`
+	RedisUsername         string `env:"REDIS_USERNAME"`
+	RedisAddress          string `env:"REDIS_ADDRESS"`
+	RedisDB               int    `env:"REDIS_DB"`
+	RedisPassword         string `env:"REDIS_PASSWORD"`
+	RedisHost             string `env:"REDIS_HOST"`
+	RedisPort             int    `env:"REDIS_PORT"`
 }
 
 func LoadConfig() *applicationConfig {

@@ -7,15 +7,16 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-func NewRedisClient(address string, username string, password string, db int) *redis.Client {
-	rc := redis.NewClient(&redis.Options{
-		Addr:     address,
-		Username: username,
-		Password: password,
-		DB:       db,
-	})
-	if err := rc.Ping(context.Background()).Err(); err != nil {
-		log.Fatalln(err)
+func NewRedisClient(redisURL string) *redis.Client {
+	redisOptions, err := redis.ParseURL(redisURL)
+	if err != nil {
+		log.Fatalf("error in NewRedisClient l:13 with error: %v", err.Error())
 	}
-	return rc
+
+	redicClient := redis.NewClient(redisOptions)
+	if err := redicClient.Ping(context.Background()).Err(); err != nil {
+		log.Fatalf("error in NewRedisClient l:18 with error: %v", err.Error())
+	}
+
+	return redicClient
 }

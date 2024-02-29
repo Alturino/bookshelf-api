@@ -1,4 +1,8 @@
-.git
 .dockerignore
+.env
+.env.example
+.git
 .gitignore
 Dockerfile
+docker-compose.yml
+redis.conf
