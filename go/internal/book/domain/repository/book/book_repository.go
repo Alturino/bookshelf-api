@@ -7,7 +7,8 @@ import (
 
 	"golang.org/x/net/context"
 
-	"github.com/Alturino/bookshelf-api/internal/domain/model/book"
+	"github.com/Alturino/bookshelf-api/internal/book/domain/model/request"
+	"github.com/Alturino/bookshelf-api/internal/book/domain/model/response"
 )
 
 type BookRepository interface {
@@ -16,15 +17,18 @@ type BookRepository interface {
 		name string,
 		reading int,
 		finished int,
-	) (books []book.Entity, err error)
-	GetBookByID(ctx context.Context, bookID string) (book book.Entity, err error)
-	InsertBook(ctx context.Context, bookDto book.BookDto) (book book.Entity, err error)
+	) (books []response.GetBookResponse, err error)
+	GetBookByID(ctx context.Context, bookID string) (book response.GetBookDetail, err error)
+	InsertBook(
+		ctx context.Context,
+		bookDto request.InsertBookDto,
+	) (book response.GetBookDetail, err error)
 	UpdateBook(
 		ctx context.Context,
-		bookDto book.BookDto,
+		bookDto request.InsertBookDto,
 		bookID string,
-	) (book book.Entity, err error)
-	DeleteBookByID(ctx context.Context, bookID string) (book book.Entity, err error)
+	) (book response.GetBookDetail, err error)
+	DeleteBookByID(ctx context.Context, bookID string) (book response.GetBookDetail, err error)
 }
 
 func NewBookRepository(db *sql.DB) BookRepository {
@@ -44,41 +48,43 @@ func (r bookRepositoryImpl) GetAllBook(
 	name string,
 	reading int,
 	finished int,
-) (books []book.Entity, err error) {
-	rows, err := r.db.QueryContext(
-		ctx,
-		"SELECT id, name, publisher FROM books WHERE ($1::text is null or name = $1) AND ($2::integer IS NULL OR reading = $2::boolean) AND ($3::boolean IS NULL or finished = $3);",
-		name,
-		reading,
-		finished,
-	)
-	defer func() {
-		err = rows.Close()
-	}()
-	if errors.Is(err, sql.ErrNoRows) {
+) (books []response.GetBookResponse, err error) {
+	var rows *sql.Rows
+	if name == "" && reading == 0 && finished == 0 {
+		rows, err = r.db.QueryContext(ctx, "SELECT id, name, publisher FROM books")
+	} else {
+		rows, err = r.db.QueryContext(
+			ctx,
+			"SELECT id, name, publisher FROM books WHERE ($1::text is '' or name = $1) AND ($2::integer IS 0 OR reading = $2::boolean) AND ($3::boolean IS 0 or finished = $3);",
+			name,
+			reading,
+			finished,
+		)
+	}
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		if err != nil {
+			log.Printf("error in GetAllBook with error: %v", err.Error())
+		}
+	}(rows)
+	if err != nil {
 		log.Printf("error in GetAllBook with error: %v", err.Error())
 		return nil, err
 	}
 
 	for rows.Next() {
-		var book book.Entity
+		book := response.GetBookResponse{}
 		err = rows.Scan(
 			&book.ID,
 			&book.Name,
-			&book.Year,
-			&book.Author,
-			&book.Summary,
 			&book.Publisher,
-			&book.Pagecount,
-			&book.ReadPage,
-			&book.Reading,
-			&book.Finished,
 		)
 		if err != nil {
 			log.Printf("error in GetAllBook with error: %v", err.Error())
 			return nil, err
 		}
 		books = append(books, book)
+
 	}
 
 	if err = rows.Err(); err != nil {
@@ -91,7 +97,7 @@ func (r bookRepositoryImpl) GetAllBook(
 func (r bookRepositoryImpl) GetBookByID(
 	ctx context.Context,
 	bookID string,
-) (book book.Entity, err error) {
+) (book response.GetBookDetail, err error) {
 	row := r.db.QueryRowContext(
 		ctx,
 		"SELECT * from books WHERE id = $1 LIMIT 1;",
@@ -104,12 +110,14 @@ func (r bookRepositoryImpl) GetBookByID(
 		&book.Author,
 		&book.Summary,
 		&book.Publisher,
-		&book.Pagecount,
+		&book.PageCount,
 		&book.ReadPage,
 		&book.Reading,
+		&book.InsertedAt,
+		&book.UpdatedAt,
 		&book.Finished,
 	)
-	if errors.Is(err, sql.ErrNoRows) {
+	if err != nil {
 		log.Printf("error in GetBookByID with error: %v", err.Error())
 		return book, err
 	}
@@ -119,8 +127,8 @@ func (r bookRepositoryImpl) GetBookByID(
 
 func (r bookRepositoryImpl) InsertBook(
 	ctx context.Context,
-	bookDto book.BookDto,
-) (book book.Entity, err error) {
+	bookDto request.InsertBookDto,
+) (book response.GetBookDetail, err error) {
 	row := r.db.QueryRowContext(
 		ctx,
 		"INSERT INTO books (name, year, author, summary, publisher, page_count, read_page, reading, finished) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;",
@@ -141,9 +149,11 @@ func (r bookRepositoryImpl) InsertBook(
 		&book.Author,
 		&book.Summary,
 		&book.Publisher,
-		&book.Pagecount,
+		&book.PageCount,
 		&book.ReadPage,
 		&book.Reading,
+		&book.InsertedAt,
+		&book.UpdatedAt,
 		&book.Finished,
 	)
 	if errors.Is(err, sql.ErrNoRows) {
@@ -156,12 +166,12 @@ func (r bookRepositoryImpl) InsertBook(
 
 func (r bookRepositoryImpl) UpdateBook(
 	ctx context.Context,
-	bookDto book.BookDto,
+	bookDto request.InsertBookDto,
 	bookID string,
-) (book book.Entity, err error) {
+) (book response.GetBookDetail, err error) {
 	row := r.db.QueryRowContext(
 		ctx,
-		"INSERT INTO books (id, name, year, author, summary, publisher, page_count, read_page, reading, finished) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id; ON CONFLICT (name, year, author, summary, publisher, page_count, read_page, reading, finished) DO NOTHING | DO UPDATE SET name=$1, year=$2, author=$3, summary=$4, publisher=$5, page_count=$6, read_page=$7, reading=$8, finished=$9; RETURNING id, name, year, author, summary, publisher, page_count, read_page, reading, finished",
+		"UPDATE books set name=$2, year=$3, author=$4, summary=$5, publisher=$6, page_count=$7, read_page=$8, reading=$9 where id=$1 RETURNING id, name, year, author, summary, publisher, page_count, read_page, reading, finished, inserted_at, updated_at;",
 		bookID,
 		bookDto.Name,
 		bookDto.Year,
@@ -170,7 +180,6 @@ func (r bookRepositoryImpl) UpdateBook(
 		bookDto.Publisher,
 		bookDto.PageCount,
 		bookDto.ReadPage,
-		bookDto.ReadPage > 0,
 		bookDto.ReadPage == bookDto.PageCount,
 	)
 	err = row.Scan(
@@ -180,12 +189,14 @@ func (r bookRepositoryImpl) UpdateBook(
 		&book.Author,
 		&book.Summary,
 		&book.Publisher,
-		&book.Pagecount,
+		&book.PageCount,
 		&book.ReadPage,
 		&book.Reading,
 		&book.Finished,
+		&book.InsertedAt,
+		&book.UpdatedAt,
 	)
-	if errors.Is(err, sql.ErrNoRows) {
+	if err != nil {
 		log.Printf("error in UpdateBook with error: %v", err.Error())
 		return book, err
 	}
@@ -196,10 +207,10 @@ func (r bookRepositoryImpl) UpdateBook(
 func (r bookRepositoryImpl) DeleteBookByID(
 	ctx context.Context,
 	bookID string,
-) (book book.Entity, err error) {
+) (book response.GetBookDetail, err error) {
 	row := r.db.QueryRowContext(
 		ctx,
-		"DELETE FROM books WHERE id = $1 LIMIT 1 RETURNING id, name, year, author, summary, publisher, page_count, read_page, reading, finished;",
+		"DELETE FROM books WHERE id = $1 RETURNING id, name, year, author, summary, publisher, page_count, read_page, reading, finished, inserted_at, updated_at;",
 		bookID,
 	)
 	err = row.Scan(
@@ -209,12 +220,14 @@ func (r bookRepositoryImpl) DeleteBookByID(
 		&book.Author,
 		&book.Summary,
 		&book.Publisher,
-		&book.Pagecount,
+		&book.PageCount,
 		&book.ReadPage,
 		&book.Reading,
 		&book.Finished,
+		&book.InsertedAt,
+		&book.UpdatedAt,
 	)
-	if errors.Is(err, sql.ErrNoRows) {
+	if err != nil {
 		log.Printf("error in DeleteBookByID with error: %v", err.Error())
 		return book, err
 	}

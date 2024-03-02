@@ -1,10 +1,8 @@
-package book
+package controller
 
 import (
-	"database/sql"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -13,9 +11,9 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/redis/go-redis/v9"
 
-	hashutil "github.com/Alturino/bookshelf-api/internal/delivery/hash-util"
-	model "github.com/Alturino/bookshelf-api/internal/domain/model/book"
-	"github.com/Alturino/bookshelf-api/internal/domain/repository/book"
+	"github.com/Alturino/bookshelf-api/internal/book/domain/model/request"
+	"github.com/Alturino/bookshelf-api/internal/book/domain/model/response"
+	"github.com/Alturino/bookshelf-api/internal/book/domain/repository/book"
 )
 
 type BookController interface {
@@ -40,14 +38,14 @@ func newBookController(repository book.BookRepository, redisClient *redis.Client
 }
 
 func (r bookController) GetAllBook(c *gin.Context) {
-	var queryParam model.GetBookDto
+	queryParam := request.GetBookQueryParam{}
 	err := c.ShouldBindQuery(&queryParam)
 	if err != nil {
 		log.Printf("error in BookController.GetAllBook with error: %v", err.Error())
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 			"status": "success",
 			"data": gin.H{
-				"books": []model.GetBookDto{},
+				"books": []request.GetBookQueryParam{},
 			},
 		})
 		return
@@ -58,42 +56,31 @@ func (r bookController) GetAllBook(c *gin.Context) {
 		log.Printf("error in BookController.GetAllBook with error: %v", err.Error())
 	}
 
-	cacheKey, err := hashutil.GetCacheKey(queryParamJSON)
-	if err != nil {
-		log.Printf("error in BookController.GetAllBook with error: %v", err.Error())
-	}
-
-	cacheData, err := r.redisClient.Get(c, string(cacheKey)).Result()
-	if err != nil {
+	cacheData, err := r.redisClient.Get(c, string(queryParamJSON)).Result()
+	if cacheData == "null" || cacheData == "" || errors.Is(err, redis.Nil) {
 		books, err := r.repository.GetAllBook(
 			c,
 			queryParam.Name,
 			queryParam.Reading,
 			queryParam.Finished,
 		)
-		if err != nil {
-			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
-			c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+		if books == nil || err != nil {
+			c.AbortWithStatusJSON(http.StatusOK, gin.H{
 				"status": "success",
 				"data": gin.H{
-					"books": []model.GetBookDto{},
+					"books": []request.GetBookQueryParam{},
 				},
 			})
 			return
 		}
 
-		booksJSON, err := json.Marshal(books)
-		if err != nil {
-			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
-		}
-
-		err = r.redisClient.Set(c, string(cacheKey), booksJSON, 30*time.Minute).Err()
+		err = r.redisClient.Set(c, string(queryParamJSON), books, 30*time.Minute).Err()
 		if err != nil {
 			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"status": "sucess",
+			"status": "success",
 			"data": gin.H{
 				"books": books,
 			},
@@ -111,10 +98,11 @@ func (r bookController) GetAllBook(c *gin.Context) {
 
 func (r bookController) GetBookByID(c *gin.Context) {
 	bookID := c.Param("id")
+
 	cacheData, err := r.redisClient.Get(c, bookID).Result()
 	if err != nil {
 		book, err := r.repository.GetBookByID(c, bookID)
-		if errors.Is(err, sql.ErrNoRows) {
+		if err != nil {
 			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
 			c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 				"status":  "fail",
@@ -123,42 +111,42 @@ func (r bookController) GetBookByID(c *gin.Context) {
 			return
 		}
 
-		bookJSON, err := json.Marshal(book)
-		if err != nil {
-			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
-		}
-
-		err = r.redisClient.Set(c, bookID, bookJSON, 30*time.Minute).Err()
+		err = r.redisClient.Set(c, bookID, book, 30*time.Minute).Err()
 		if err != nil {
 			log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
 		}
 	}
 
+	book := response.GetBookDetail{}
+	err = json.Unmarshal([]byte(cacheData), &book)
+	if err != nil {
+		log.Printf("error in BookController.GetBookByID with error: %v", err.Error())
+	}
 	c.JSON(http.StatusOK, gin.H{
 		"status": "success",
 		"data": gin.H{
-			"book": cacheData,
+			"book": book,
 		},
 	})
 }
 
 func (r bookController) UpdateBookByID(c *gin.Context) {
 	bookID := c.Param("id")
-	var requestBody model.BookDto
+	requestBody := request.InsertBookDto{}
 	err := c.ShouldBindJSON(&requestBody)
 	if err != nil {
-		var ve validator.ValidationErrors
+		ve := validator.ValidationErrors{}
 		errors.As(err, &ve)
 		for _, fe := range ve {
 			log.Println(fe)
-			if fe.Field() == "name" {
+			if fe.Field() == "Name" {
 				c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 					"status":  "fail",
 					"message": "Gagal memperbarui buku. Mohon isi nama buku",
 				})
 				return
 			}
-			if fe.Field() == "readPage" {
+			if fe.Field() == "ReadPage" {
 				c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 					"status":  "fail",
 					"message": "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount",
@@ -169,25 +157,15 @@ func (r bookController) UpdateBookByID(c *gin.Context) {
 	}
 
 	book, err := r.repository.UpdateBook(c, requestBody, bookID)
-	if errors.Is(err, sql.ErrNoRows) {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 			"status":  "fail",
 			"message": "Gagal memperbarui buku. Id tidak ditemukan",
 		})
 		return
 	}
 
-	bookJSON, err := json.Marshal(book)
-	if err != nil {
-		log.Printf("error in BookController.UpdateBookByID with error: %v", err.Error())
-	}
-
-	cacheKey, err := hashutil.GetCacheKey(bookJSON)
-	if err != nil {
-		log.Printf("error in BookController.UpdateBookByID with error: %v", err.Error())
-	}
-
-	err = r.redisClient.Set(c, string(cacheKey), bookJSON, 30*time.Minute).Err()
+	err = r.redisClient.Set(c, book.ID, book, 30*time.Minute).Err()
 	if err != nil {
 		log.Printf("error in BookController.UpdateBookByID with error: %v", err.Error())
 	}
@@ -199,7 +177,7 @@ func (r bookController) UpdateBookByID(c *gin.Context) {
 }
 
 func (r bookController) InsertBook(c *gin.Context) {
-	var requestBody model.BookDto
+	requestBody := request.InsertBookDto{}
 	if err := c.ShouldBindJSON(&requestBody); err != nil {
 		for _, fe := range err.(validator.ValidationErrors) {
 			if fe.Field() == "Name" {
@@ -222,33 +200,12 @@ func (r bookController) InsertBook(c *gin.Context) {
 	book, err := r.repository.InsertBook(c, requestBody)
 	if err != nil {
 		log.Printf("error in BookController.InsertBook with error: %v", err.Error())
-
-		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-			"status":  "fail",
-			"message": fmt.Sprintf("Gagal menambahkan buku dengan error: %s", err.Error()),
-		})
 		return
 	}
 
-	bookJSON, err := json.Marshal(book)
+	err = r.redisClient.Set(c, book.ID, book, 30*time.Minute).Err()
 	if err != nil {
 		log.Printf("error in BookController.InsertBook with error: %v", err.Error())
-
-		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-			"status":  "fail",
-			"message": fmt.Sprintf("Gagal menambahkan buku dengan error: %s", err.Error()),
-		})
-		return
-	}
-
-	err = r.redisClient.Set(c, book.ID, bookJSON, 30*time.Minute).Err()
-	if err != nil {
-		log.Printf("error in BookController.InsertBook with error: %v", err.Error())
-
-		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
-			"status":  "fail",
-			"message": fmt.Sprintf("Gagal menambahkan buku dengan error: %s", err.Error()),
-		})
 		return
 	}
 
@@ -264,20 +221,17 @@ func (r bookController) InsertBook(c *gin.Context) {
 func (r bookController) DeleteBookByID(c *gin.Context) {
 	bookID := c.Param("id")
 	_, err := r.repository.DeleteBookByID(c, bookID)
-	if errors.Is(err, sql.ErrNoRows) {
+	if err != nil {
 		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 			"status":  "fail",
 			"message": "Buku gagal dihapus. Id tidak ditemukan",
 		})
+		return
 	}
 
 	err = r.redisClient.Del(c, bookID).Err()
 	if err != nil {
 		log.Printf("error in BookController.DeleteBookByID with error: %v", err.Error())
-		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
-			"status":  "fail",
-			"message": fmt.Sprint("Buku gagal dihapus. dengan error: %s", err.Error()),
-		})
 	}
 
 	c.JSON(http.StatusOK, gin.H{

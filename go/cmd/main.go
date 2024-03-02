@@ -8,8 +8,8 @@ import (
 	"github.com/Alturino/bookshelf-api/common/env"
 	"github.com/Alturino/bookshelf-api/common/postgres"
 	"github.com/Alturino/bookshelf-api/common/redis"
-	"github.com/Alturino/bookshelf-api/internal/delivery/book"
-	domain "github.com/Alturino/bookshelf-api/internal/domain/repository/book"
+	"github.com/Alturino/bookshelf-api/internal/book/delivery/controller"
+	domain "github.com/Alturino/bookshelf-api/internal/book/domain/repository/book"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 	db := postgres.NewPostgreSQLClient(env.PostgresMigrationPath, env.PostgresURL)
 	redisClient := redis.NewRedisClient(redisURL)
 	bookRepository := domain.NewBookRepository(db)
-	bookController := book.NewBookController(bookRepository, redisClient)
+	bookController := controller.NewBookController(bookRepository, redisClient)
 
 	r := gin.Default()
 	books := r.Group("/books")
@@ -35,7 +35,7 @@ func main() {
 		books.POST("", bookController.InsertBook)
 		books.GET("/:id", bookController.GetBookByID)
 		books.DELETE("/:id", bookController.DeleteBookByID)
-		books.PATCH("/:id", bookController.UpdateBookByID)
+		books.PUT("/:id", bookController.UpdateBookByID)
 	}
 
 	err := r.Run(env.ApplicationAddress)
